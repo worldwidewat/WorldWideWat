@@ -80,27 +80,15 @@
     var names = new[] { "<a href='http://twitter.com/mharen'>@mharen</a>", "<a href='http://twitter.com/pwninstein'>@pwninstein</a>" }.OrderBy(n => rnd.Next());
     var credits = string.Join(" and ", names);
 }
-<h1>Welcome to @Html.ActionLink("WORLD WIDE WAT", "Index", "Home"), a little collection of side 
-    projects from @Html.Raw(credits).</h1>
-<section id="tiles">
-    @foreach (var tile in Model.Tiles)
-    {
+    <h1>Welcome to @Html.ActionLink("WORLD WIDE WAT", "Index", "Home"), a little collection of side 
+        projects from @Html.Raw(credits).</h1>
+    <section id="tiles">
+        @foreach (var tile in Model.Tiles)
+        {
         <div>
             <h2><a href="@tile.Url">@tile.Title</a></h2>
             <a href="@tile.Url"><img src="@tile.ImageUrl" alt="@tile.Title logo"/></a>
             <p>@Html.Raw(tile.Description)</p>
         </div>
-    }
-</section>
-@section scripts
-{
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-41725429-5', 'worldwidewat.com');
-        ga('send', 'pageview');
-    </script>
-}
+        }
+    </section>
