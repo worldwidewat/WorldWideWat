@@ -1,4 +1,4 @@
-﻿@model dynamic
+﻿@model Web.Models.IndexModel
 @section styles
 {
     <style>
@@ -15,7 +15,7 @@
         }
 
 
-            #tiles > div > img {
+            #tiles img {
                 width: 300px;
                 height: 100px;
             }
@@ -64,11 +64,11 @@
                 margin: 0;
                 padding: 0 0 20px 0;
                 border-radius: 0;
-                padding: 10px;
+                padding: 10px 0;
                 float: none;
             }
 
-            #tiles > img {
+            #tiles img {
                 width: 100%;
                 height: auto;
             }
@@ -79,24 +79,12 @@
     projects from <a href="http://twitter.com/mharen">@@mharen</a>
     and <a href="http://twitter.com/pwninstein">@@pwninstein</a>.</h1>
 <section id="tiles">
-    <div>
-        <h2><a href="http://upboat.me">upboat.me</a></h2>
-        <img src="http://placekitten.com/300/100" />
-        <p>Build a meme from anywhere by linking to upboat.me. Put your meme info right in the url.</p>
-    </div>
-    <div>
-        <h2><a href="http://iffylink.com">iffylink.com</a></h2>
-        <img src="http://placekitten.com/300/101" />
-        <p>A volatile URL-shortener. Nothing lasts forever, why should short links?</p>
-    </div>
-    <div>
-        <h2><a href="http://tickstodatetime.com">tickstodatetime.com</a></h2>
-        <img src="http://placekitten.com/300/102" />
-        <p>Convert .NET <code>Ticks</code> to a human-readable <code>DateTime</code>.</p>
-    </div>
-    <div>
-        <h2><a href="http://datetimetostring.com">datetimetostring.com</a></h2>
-        <img src="http://placekitten.com/300/103" />
-        <p>Quick and direct access to all those obscure format strings for .NET's <code>DateTime</code>.</p>
-    </div>
+    @foreach (var tile in Model.Tiles)
+    {
+        <div>
+            <h2><a href="@tile.Url">@tile.Title</a></h2>
+            <a href="@tile.Url"><img src="@tile.ImageUrl" alt="@tile.Title logo"/></a>
+            <p>@Html.Raw(tile.Description)</p>
+        </div>
+    }
 </section>
