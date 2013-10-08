@@ -75,9 +75,13 @@
         }
     </style>
 }
+@{
+    var rnd = new Random();
+    var names = new[] { "<a href='http://twitter.com/mharen'>@mharen</a>", "<a href='http://twitter.com/pwninstein'>@pwninstein</a>" }.OrderBy(n => rnd.Next());
+    var credits = string.Join(" and ", names);
+}
 <h1>Welcome to @Html.ActionLink("WORLD WIDE WAT", "Index", "Home"), a little collection of side 
-    projects from <a href="http://twitter.com/mharen">@@mharen</a>
-    and <a href="http://twitter.com/pwninstein">@@pwninstein</a>.</h1>
+    projects from @Html.Raw(credits).</h1>
 <section id="tiles">
     @foreach (var tile in Model.Tiles)
     {
