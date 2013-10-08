@@ -1,0 +1,102 @@
+﻿@model dynamic
+@section styles
+{
+    <style>
+        body {
+            margin: 0;
+        }
+        #tiles > div {
+            float: left;
+            width: 300px;
+            margin: 10px;
+            background-color: #2C3E50;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+
+
+            #tiles > div > img {
+                width: 300px;
+                height: 100px;
+            }
+
+        h1, h2 {
+            margin: 0;
+            padding: 5px;
+            font-family: "Roboto", "HelveticaNeueUltraLight", "HelveticaNeue-Ultra-Light", "Helvetica Neue Ultra Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif;
+        }
+
+        h1 {
+            color: #2C3E50;
+        }
+
+            h1 a {
+                background-color: #FC4349;
+                color: #ffffff;
+                display: inline-block;
+                padding: 5px 15px;
+                text-decoration: none;
+            }
+        h2, h2 a {
+            text-align: center;
+            color: #FFFFFF;
+            text-decoration: none;
+            display: block;
+        }
+
+            h2 a:hover {
+                color: #D7DADB;
+            }
+
+        a {
+            color: #FC4349;
+        }
+
+        #tiles > div > p {
+            margin: 0;
+            padding: 10px;
+            color: #D7DADB;
+        }
+
+        @@media only screen and (max-width : 480px) {
+            #tiles > div {
+                width: 100%;
+                margin: 0;
+                padding: 0 0 20px 0;
+                border-radius: 0;
+                padding: 10px;
+                float: none;
+            }
+
+            #tiles > img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+}
+<h1>Welcome to @Html.ActionLink("WORLD WIDE WAT", "Index", "Home"), a little collection of side 
+    projects from <a href="http://twitter.com/mharen">@@mharen</a>
+    and <a href="http://twitter.com/pwninstein">@@pwninstein</a>.</h1>
+<section id="tiles">
+    <div>
+        <h2><a href="http://upboat.me">upboat.me</a></h2>
+        <img src="http://placekitten.com/300/100" />
+        <p>Build a meme from anywhere by linking to upboat.me. Put your meme info right in the url.</p>
+    </div>
+    <div>
+        <h2><a href="http://iffylink.com">iffylink.com</a></h2>
+        <img src="http://placekitten.com/300/101" />
+        <p>A volatile URL-shortener. Nothing lasts forever, why should short links?</p>
+    </div>
+    <div>
+        <h2><a href="http://tickstodatetime.com">tickstodatetime.com</a></h2>
+        <img src="http://placekitten.com/300/102" />
+        <p>Convert .NET <code>Ticks</code> to a human-readable <code>DateTime</code>.</p>
+    </div>
+    <div>
+        <h2><a href="http://datetimetostring.com">datetimetostring.com</a></h2>
+        <img src="http://placekitten.com/300/103" />
+        <p>Quick and direct access to all those obscure format strings for .NET's <code>DateTime</code>.</p>
+    </div>
+</section>
