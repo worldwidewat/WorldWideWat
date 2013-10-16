@@ -55,6 +55,15 @@ namespace Web.Controllers
                                     Url = "http://datetimetostring.com",
                                     ImageUrl = "http://placekitten.com/303/100"
                                 });
+                                
+            model.Tiles.Add(new Tile
+                                {
+                                    Title = "dancehamster.com",
+                                    Description =
+                                        @"A mobile-friendly version of those iconic dancing hamsters. For science.",
+                                    Url = "http://dancehamster.com",
+                                    ImageUrl = "http://placekitten.com/304/100"
+                                });
 
             return View(model);
         }
